@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outlet Dom i Ogród</title>
+
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <style>
+        body{
+            background-image: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.ogrody-cis.pl%2Fwp-content%2Fuploads%2F2016%2F02%2FOGRD%25C3%2593D-POD-LASEM-3.jpg&f=1&nofb=1");
+        }
+
+        nav, .bg-gradient{
+            background: rgb(47,198,69);
+            background: linear-gradient(90deg, rgba(47,198,69,1) 28%, rgba(109,233,83,1) 68%);
+        }
+
+        /* Hamburger Animation */
+        .line {
+        fill: none;
+        stroke: white;
+        stroke-width: 6;
+        transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+            stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .line1 {
+        stroke-dasharray: 60 207;
+        stroke-width: 6;
+        }
+        .line2 {
+        stroke-dasharray: 60 60;
+        stroke-width: 6;
+        }
+        .line3 {
+        stroke-dasharray: 60 207;
+        stroke-width: 6;
+        }
+        .opened .line1 {
+        stroke-dasharray: 90 207;
+        stroke-dashoffset: -134;
+        stroke-width: 6;
+        }
+        .opened .line2 {
+        stroke-dasharray: 1 60;
+        stroke-dashoffset: -30;
+        stroke-width: 6;
+        }
+        .opened .line3 {
+        stroke-dasharray: 90 207;
+        stroke-dashoffset: -134;
+        stroke-width: 6;
+        }
+    </style>
+</head>
+<body class="bg-cover">
+    
+    <!-- Navbar -->
+    <nav class="absolute w-screen h-auto p-5">
+        <!-- Navbar MD:-->
+        <div class="hidden md:flex flex-row justify-evenly space-x-24 items-center h-full">
+
+            <div class="flex flex-row flex-wrap space-x-10 items-center">
+                <div class="inline-flex items-center text-white text-md lg:text-xl font-semibold space-x-1">
+                    <i class="fas fa-tree fa-2x"></i>
+                    <p>
+                        OUTLET DOM I OGRÓD
+                    </p>
+                </div>
+    
+                <div class="flex space-x-4 text-white ">
+                    <button class="tracking-wider">
+                        O NAS
+                    </button>
+        
+                    <button class="tracking-wider">
+                        KONTAKT
+                    </button>
+        
+                    <button class="tracking-wider">
+                        SKLEP
+                    </button>
+                </div>
+            </div>
+
+
+            
+            <div class="flex flex-col space-y-1 lg:space-y-0 text-center items-start   lg:flex-row lg:items-center text-white space-x-4 text-sm md:text-md lg:divide-x lg:divide-green-500 font-normal">
+                <div class="inline-flex items-center space-x-2 hover:text-gray-700 lg:pl-0 pl-3.5 transition justify-self-start">
+                    <i class="fas fa-phone transform rotate-90"></i>
+                    <a href="tel:538138770">
+                        538 138 770
+                    </a>
+                </div>
+
+                <div class="inline-flex items-center space-x-2 lg:pl-4 hover:text-gray-700 transition">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <a href="tel:538138770">
+                        Białystok
+                    </a>
+                </div>
+
+                <div class="inline-flex items-center  space-x-2 lg:pl-4 hover:text-gray-700 transition">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:przemekdudek321@wp.pl" class="tracking-wider">
+                        outletdomiogrod@gmail.com
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Mobile Menu Navbar Toggle-->
+        <div class="md:hidden flex flex-row justify-between px-6">
+            <div class="inline-flex items-center text-white text-md lg:text-xl font-semibold space-x-1">
+                <i class="fas fa-tree fa-2x"></i>
+                <p>
+                    OUTLET DOM I OGRÓD
+                </p>
+            </div>
+
+            <button class="text-white mobile-menu-button" onclick="this.classList.toggle('opened');this.setAttribute('aria-expanded', this.classList.contains('opened'))">
+                <svg width="70" height="70" viewBox="0 0 100 100">
+                    <path class="line line1" d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058" />
+                    <path class="line line2" d="M 20,50 H 80" />
+                    <path class="line line3" d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942" />
+                </svg>
+            </button>
+        </div>
+
+        
+    </nav>
+
+
+
+
+    <div class="fixed h-screen sidebar bg-gradient transform -translate-x-full transition duration-200 ease-in-out">
+        <div class="flex flex-col h-full space-y-6 items-center justify-between">
+
+            <div class="flex flex-col space-y-12">
+                <div class="inline-flex space-x-1 items-center text-white text-2xl p-5">
+                    <i class="fas fa-tree fa-2x"></i>
+                    <div class="flex flex-col">
+                        <p>OUTLET </p>
+                        <p>DOM I OGRÓD</p>
+                    </div>
+                </div>
+    
+                <nav class="flex flex-col space-y-3 w-full text-3xl  text-white">
+                    <button class="tracking-wider self-start  ml-5 font-bold">
+                        O NAS
+                    </button>
+        
+                    <button class="tracking-wider self-start ml-5 font-bold">
+                        KONTAKT
+                    </button>
+        
+                    <button class="tracking-wider self-start ml-5 font-bold">
+                        SKLEP
+                    </button>
+                </nav>
+            </div>
+
+            <div class="flex flex-col space-y-3 pb-24 px-4">
+                <div class="inline-flex items-center space-x-2 font-semibold text-white text-lg hover:text-gray-700  transition justify-self-start">
+                    <i class="fas fa-phone transform rotate-90"></i>
+                    <a href="tel:538138770">
+                        538 138 770
+                    </a>
+                </div>
+
+                <div class="inline-flex items-center space-x-2 font-semibold text-white text-lg hover:text-gray-700 transition">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <a href="tel:538138770">
+                        Białystok
+                    </a>
+                </div>
+
+                <div class="inline-flex items-center  space-x-2 font-semibold text-white text-lg hover:text-gray-700 transition">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:przemekdudek321@wp.pl" class="tracking-wider">
+                        outletdomiogrod@gmail.com
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
+
+
+    <script>
+        
+
+        const btn = document.querySelector('.mobile-menu-button');
+            const sidebar = document.querySelector('.sidebar');
+
+        btn.addEventListener('click', () => {
+            sidebar.classList.toggle('-translate-x-full');
+        })
+
+        
+    </script>
+</body>
+</html>
