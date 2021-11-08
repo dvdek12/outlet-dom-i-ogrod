@@ -10,20 +10,23 @@
     
     <!-- font awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-    <style>
-        body{
-            background-image: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.ogrody-cis.pl%2Fwp-content%2Fuploads%2F2016%2F02%2FOGRD%25C3%2593D-POD-LASEM-3.jpg&f=1&nofb=1");
-        }
 
-        nav, .bg-gradient{
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap" rel="stylesheet">
+
+    <style>
+
+        /* nav, .bg-gradient{
             background: rgb(47,198,69);
             background: linear-gradient(90deg, rgba(47,198,69,1) 28%, rgba(109,233,83,1) 68%);
-        }
+        } */
 
         /* Hamburger Animation */
         .line {
         fill: none;
-        stroke: white;
+        stroke: black;
         stroke-width: 6;
         transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
             stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -57,73 +60,106 @@
         }
     </style>
 </head>
-<body class="bg-cover">
+<body class="bg-cover" style="font-family: 'DM Sans', sans-serif;">
     
+    <div class="bg-gray-900 py-4 w-screen h-auto hidden md:block">
+        <div class="flex justify-center space-x-6">
+            <div class="inline-flex items-center space-x-2 text-white font-extralight text-sm pr-2 hover:text-red-500 transition">
+                <i class="fas fa-phone transform rotate-90 "></i>
+                <a href="tel:538138770">
+                    721-014-160
+                </a>
+            </div>
+
+            <div class="inline-flex items-center space-x-2 text-white font-normal text-sm hover:text-red-500 transition">
+                <i class="fas fa-map-marker-alt "></i>
+                <a href="https://goo.gl/maps/nUmWY55sLUyQgbag9" target="_blank" class="font-thin">
+                    Mazowiecka 44, 16-001 Księżyno
+                </a>
+            </div>
+
+            <div class="inline-flex items-center  space-x-2 text-white font-normal text-sm hover:text-red-500 transition">
+                <i class="fas fa-envelope "></i>
+                <a href="mailto:biuro.outletdomiogrod@gmail.com" class="tracking-wider">
+                    biuro.outletdomiogrod@gmail.com
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+
     <!-- Navbar -->
-    <nav class="absolute w-screen h-auto p-5">
+    <nav class="absolute w-screen h-auto ">
         <!-- Navbar MD:-->
         <div class="hidden md:flex flex-row justify-evenly space-x-24 items-center h-full">
 
             <div class="flex flex-row flex-wrap space-x-10 items-center">
-                <div class="inline-flex items-center text-white text-md lg:text-xl font-semibold space-x-1">
-                    <i class="fas fa-tree fa-2x"></i>
-                    <p>
-                        OUTLET DOM I OGRÓD
-                    </p>
+                <div class="inline-flex items-center text-gray-900 text-md lg:text-xl font-semibold space-x-1">
+                    <img src="./assets/logo2.jpg" class="w-48 h-24">
                 </div>
     
-                <div class="flex space-x-4 text-white ">
-                    <button class="tracking-wider">
-                        O NAS
+                <div class="flex space-x-4  text-md">
+                    <button class="tracking-wide font-semibold hover:text-red-700 transition">
+                        O nas
                     </button>
         
-                    <button class="tracking-wider">
-                        KONTAKT
+                    <button class="tracking-wide font-semibold hover:text-red-700 transition">
+                        Ofera
+                    </button>
+
+                    <button class="tracking-wide font-semibold hover:text-red-700 transition">
+                        Kontakt
                     </button>
         
-                    <button class="tracking-wider">
-                        SKLEP
+                    <button class="tracking-wide font-semibold hover:text-red-700 transition">
+                        Sklep
                     </button>
                 </div>
             </div>
 
 
-            
-            <div class="flex flex-col space-y-1 lg:space-y-0 text-center items-start   lg:flex-row lg:items-center text-white space-x-4 text-sm md:text-md lg:divide-x lg:divide-green-500 font-normal">
-                <div class="inline-flex items-center space-x-2 hover:text-gray-700 lg:pl-0 pl-3.5 transition justify-self-start">
-                    <i class="fas fa-phone transform rotate-90"></i>
-                    <a href="tel:538138770">
-                        538 138 770
-                    </a>
+            <button class="pb-2" onclick="openPopover(event,'popover-example-left')">
+                <div class="inline-flex space-x-1.5 items-center cursor-pointer">
+                    
+                    <i class="far fa-clock"></i>
+                    
+                    <p class="text-black font-light ">
+                        GODZINY OTWARCIA
+                    </p>
+                    
+                    <i class="fas fa-sort-down mb-1.5 hover:text-red-700 transition" ></i>
+                
+                    <!-- Popover -->
+                    <div class="hidden bg-white border mr-3 block z-50 font-normal leading-normal text-sm max-w-xs text-left no-underline break-words rounded-lg"
+                        id="popover-example-left">
+                        <div>
+                            <div class="text-gray-900 opacity-100 font-bold px-3 pt-3 mb-0  rounded-t-lg">
+                                Outlet: 
+                            </div>
+                            <div class="text-gray-800 flex flex-col p-3">
+                                <p>
+                                    pon-pt: 10:00-17:00
+                                </p>
+                                <p>
+                                    sob-niedz: zamknięte
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+    
                 </div>
-
-                <div class="inline-flex items-center space-x-2 lg:pl-4 hover:text-gray-700 transition">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <a href="tel:538138770">
-                        Białystok
-                    </a>
-                </div>
-
-                <div class="inline-flex items-center  space-x-2 lg:pl-4 hover:text-gray-700 transition">
-                    <i class="fas fa-envelope"></i>
-                    <a href="mailto:przemekdudek321@wp.pl" class="tracking-wider">
-                        outletdomiogrod@gmail.com
-                    </a>
-                </div>
-            </div>
+            </button> 
         </div>
 
 
         <!-- Mobile Menu Navbar Toggle-->
-        <div class="md:hidden flex flex-row justify-between px-6">
-            <div class="inline-flex items-center text-white text-md lg:text-xl font-semibold space-x-1">
-                <i class="fas fa-tree fa-2x"></i>
-                <p>
-                    OUTLET DOM I OGRÓD
-                </p>
+        <div class="md:hidden flex flex-row justify-between px-6 ">
+            <div class="inline-flex items-center text-black text-md lg:text-xl font-semibold space-x-1">
+                <img src="./assets/logo2.jpg" class="w-48 h-24">
             </div>
 
-            <button class="text-white mobile-menu-button" onclick="this.classList.toggle('opened');this.setAttribute('aria-expanded', this.classList.contains('opened'))">
+            <button class="mobile-menu-button z-50" onclick="this.classList.toggle('opened');this.setAttribute('aria-expanded', this.classList.contains('opened'))">
                 <svg width="70" height="70" viewBox="0 0 100 100">
                     <path class="line line1" d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058" />
                     <path class="line line2" d="M 20,50 H 80" />
@@ -138,54 +174,71 @@
 
 
 
-    <div class="fixed h-screen sidebar bg-gradient transform -translate-x-full transition duration-200 ease-in-out">
+    <div class="fixed w-screen sidebar bg-white transform -translate-y-full transition duration-200 ease-in-out shadow-2xl">
         <div class="flex flex-col h-full space-y-6 items-center justify-between">
 
-            <div class="flex flex-col space-y-12">
-                <div class="inline-flex space-x-1 items-center text-white text-2xl p-5">
-                    <i class="fas fa-tree fa-2x"></i>
-                    <div class="flex flex-col">
-                        <p>OUTLET </p>
-                        <p>DOM I OGRÓD</p>
-                    </div>
+            <div class="flex flex-col space-y-6">
+                <div class="inline-flex space-x-1 items-center text-black text-2xl p-5">
+                    <img src="./assets/logo2.jpg" class="w-48 h-24">
                 </div>
     
-                <nav class="flex flex-col space-y-3 w-full text-3xl  text-white">
-                    <button class="tracking-wider self-start  ml-5 font-bold">
-                        O NAS
+                <nav class="flex flex-col space-y-3 w-full text-3xl  text-black">
+                    <button class="tracking-wider self-start -ml-6 font-bold">
+                        O nas
+                    </button>
+                    
+                    <button class="tracking-wider self-start -ml-6  font-bold">
+                        Oferta
+                    </button>
+
+                    <button class="tracking-wider self-start -ml-6  font-bold">
+                        Kontakt
                     </button>
         
-                    <button class="tracking-wider self-start ml-5 font-bold">
-                        KONTAKT
-                    </button>
-        
-                    <button class="tracking-wider self-start ml-5 font-bold">
-                        SKLEP
+                    <button class="tracking-wider self-start -ml-6  font-bold">
+                        Sklep
                     </button>
                 </nav>
             </div>
 
             <div class="flex flex-col space-y-3 pb-24 px-4">
-                <div class="inline-flex items-center space-x-2 font-semibold text-white text-lg hover:text-gray-700  transition justify-self-start">
+                <div class="inline-flex items-center space-x-2 font-semibold text-black text-lg hover:text-gray-700  transition justify-self-start">
                     <i class="fas fa-phone transform rotate-90"></i>
-                    <a href="tel:538138770">
-                        538 138 770
+                    <a href="tel:721-014-160">
+                        721-014-160
                     </a>
                 </div>
 
-                <div class="inline-flex items-center space-x-2 font-semibold text-white text-lg hover:text-gray-700 transition">
+                <div class="inline-flex items-center space-x-2 font-semibold text-black text-lg hover:text-gray-700 transition">
                     <i class="fas fa-map-marker-alt"></i>
-                    <a href="tel:538138770">
-                        Białystok
+                    <a href="Mazowiecka 44, 16-001 Księżyno">
+                        Mazowiecka 44, 16-001 Księżyno
                     </a>
                 </div>
 
-                <div class="inline-flex items-center  space-x-2 font-semibold text-white text-lg hover:text-gray-700 transition">
+                <div class="inline-flex items-center  space-x-2 font-semibold text-black text-lg hover:text-gray-700 transition">
                     <i class="fas fa-envelope"></i>
-                    <a href="mailto:przemekdudek321@wp.pl" class="tracking-wider">
-                        outletdomiogrod@gmail.com
+                    <a href="mailto:biuro.outletdomiogrod@gmail.com" class="tracking-wider">
+                        biuro.outletdomiogrod@gmail.com
                     </a>
                 </div>
+
+                <div class="pt-4 block font-normal leading-normal text-md max-w-xs text-left no-underline break-words rounded-lg self-start">
+                            <div>
+                                <div class="text-gray-900 opacity-100 font-bold mb-0  rounded-t-lg">
+                                    Outlet: 
+                                </div>
+                                <div class="text-gray-800 flex flex-col p-3">
+                                    <p>
+                                        pon-pt: 10:00-17:00
+                                    </p>
+                                    <p>
+                                        sob-niedz: zamknięte
+                                    </p>
+                                </div>
+                            </div>
+                </div>
+
             </div>
 
         </div>
@@ -193,14 +246,36 @@
     
 
 
+
+    
+
+
+
+
+
+
+
+
+    <script src="https://unpkg.com/@popperjs/core@2.9.1/dist/umd/popper.min.js" charset="utf-8"></script>
     <script>
-        
+        function openPopover(event, popoverID) {
+            let element = event.target;
+            while (element.nodeName !== "BUTTON") {
+                element = element.parentNode;
+            }
+            var popper = Popper.createPopper(element, document.getElementById(popoverID),
+            {
+                placement: "bottom",
+            }
+            );
+            document.getElementById(popoverID).classList.toggle("hidden");
+        }
 
         const btn = document.querySelector('.mobile-menu-button');
             const sidebar = document.querySelector('.sidebar');
 
         btn.addEventListener('click', () => {
-            sidebar.classList.toggle('-translate-x-full');
+            sidebar.classList.toggle('-translate-y-full');
         })
 
         
