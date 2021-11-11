@@ -588,7 +588,9 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://unpkg.com/@popperjs/core@2.9.1/dist/umd/popper.min.js" charset="utf-8"></script>
     <script>
-        AOS.init();
+        AOS.init({
+            disable: "phone"
+        });
 
         function openPopover(event, popoverID) {
             let element = event.target;
